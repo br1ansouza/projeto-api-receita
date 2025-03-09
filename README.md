@@ -36,24 +36,25 @@ Configuração do ambiente:
 5. Inicie a aplicação
    npm run dev
 
-Rotas da API:
-
+Rotas da API
 1. Criar uma receita
-   Método: POST
-   Rota: /recipes
-   Corpo da requisição:
-   {
-     "name": "Bolo de café",
-     "is_fitness": false,
-     "preparation_time": 10,
-     "ingredients": [
-       { "name": "4 ovos" },
-       { "name": "3 xícaras de trigo" }
-     ],
-     "steps": [
-       { "description": "Misture os ovos e o açúcar até esbranquiçar." }
-     ]
-   }
+POST /recipes
+
+json
+Copiar
+Editar
+{
+  "name": "Bolo de café",
+  "is_fitness": false,
+  "preparation_time": 10,
+  "ingredients": [
+    { "name": "4 ovos" },
+    { "name": "3 xícaras de trigo" }
+  ],
+  "steps": [
+    { "description": "Misture os ovos e o açúcar até esbranquiçar." }
+  ]
+}
 
 2. Listar receitas
    Método: GET
