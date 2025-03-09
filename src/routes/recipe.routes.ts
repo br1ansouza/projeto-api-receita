@@ -1,12 +1,11 @@
-import { Router } from "express";
-import RecipeController from "../controllers/RecipeController";
+import { Router, Request, Response } from "express";
+import { RecipeController } from "../controllers/RecipeController";
 
 const recipeRouter = Router();
-
 const recipeController = new RecipeController();
 
-recipeRouter.post("/", recipeController.create )
-
-recipeRouter.get("/", recipeController.getAll )
+recipeRouter.post("/", async (req: Request, res: Response) => {
+  await recipeController.create(req, res);
+});
 
 export default recipeRouter;

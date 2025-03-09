@@ -1,16 +1,21 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from "typeorm";
+import { Recipe } from "./Recipe";
 
 @Entity("recipes_steps")
 export class RecipeStep {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column({ type: "varchar", length: 100, nullable: false })
-    description: string;
+  @Column({ type: "varchar", length: 100, nullable: false })
+  description: string;
 
-    @CreateDateColumn({ type: "timestamp" })
-    created_at: Date;
+  @ManyToOne(() => Recipe, (recipe) => recipe.steps)
+  @JoinColumn({ name: "recipe_id" })
+  recipe: Recipe;
 
-    @UpdateDateColumn({ type: "timestamp" })
-    updated_at: Date;
+  @CreateDateColumn({ type: "timestamp" })
+  created_at: Date;
+
+  @UpdateDateColumn({ type: "timestamp" })
+  updated_at: Date;
 }
