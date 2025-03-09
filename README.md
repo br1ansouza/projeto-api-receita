@@ -1,9 +1,74 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/hjuoJn8L)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=18127056&assignment_repo_type=AssignmentRepo)
-# Awesome Project Build with TypeORM
+# API de Gerenciamento de Receitas
 
-Steps to run this project:
+Este projeto é uma API REST desenvolvida em **Node.js** utilizando **Express** e **TypeORM**, com um banco de dados **PostgreSQL**. A API permite cadastrar, listar e gerenciar receitas culinárias, incluindo ingredientes e etapas de preparo.
 
-1. Run `npm i` command
-2. Setup database settings inside `data-source.ts` file
-3. Run `npm start` command
+## Tecnologias Utilizadas
+
+- **Node.js**
+- **Express**
+- **TypeORM**
+- **PostgreSQL**
+- **TypeScript**
+
+## Configuração do Projeto
+
+### 1. Clonar o repositório:
+
+```sh
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+```
+
+### 2. Instalar as dependências:
+
+```sh
+npm install
+```
+
+### 3. Configurar variáveis de ambiente:
+
+Crie um arquivo `.env` na raiz do projeto e defina as configurações do banco de dados:
+
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+DB_NAME=seu_banco
+```
+
+### 4. Executar as migrations:
+
+```sh
+npm run typeorm migration:run
+```
+
+### 5. Iniciar o servidor:
+
+```sh
+npm run dev
+```
+
+O servidor estará disponível em `http://localhost:4000`.
+
+## Endpoints Principais
+
+### Criar uma nova receita
+**POST** `/recipes`
+```json
+{
+  "name": "Bolo de café",
+  "is_fitness": false,
+  "preparation_time": "00:10:00",
+  "ingredients": [
+    { "name": "4 ovos" },
+    { "name": "3 xícaras de trigo" }
+  ],
+  "steps": [
+    { "description": "Misture os ovos e o açúcar até esbranquiçar." }
+  ]
+}
+```
+
+### Listar todas as receitas
+**GET** `/recipes`
