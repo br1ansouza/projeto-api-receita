@@ -70,9 +70,3 @@ O servidor estará disponível em `http://localhost:4000`.
   ]
 }
 ```
-
-### Listar todas as receitas
-**GET** `/recipes`
-=======
-
->>>>>>> rota-listar-receita
