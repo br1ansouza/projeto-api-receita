@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # API de Gerenciamento de Receitas
 
 Este projeto é uma API REST desenvolvida em **Node.js** utilizando **Express** e **TypeORM**, com um banco de dados **PostgreSQL**. A API permite cadastrar, listar e gerenciar receitas culinárias, incluindo ingredientes e etapas de preparo.
@@ -72,3 +73,6 @@ O servidor estará disponível em `http://localhost:4000`.
 
 ### Listar todas as receitas
 **GET** `/recipes`
+=======
+
+>>>>>>> rota-listar-receita
