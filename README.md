@@ -1,9 +1,68 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/hjuoJn8L)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=18127056&assignment_repo_type=AssignmentRepo)
-# Awesome Project Build with TypeORM
+API de Gerenciamento de Receitas
 
-Steps to run this project:
+Este projeto é uma API para gerenciamento de receitas, permitindo o cadastro, listagem e manipulação de receitas, ingredientes e etapas de preparo.
 
-1. Run `npm i` command
-2. Setup database settings inside `data-source.ts` file
-3. Run `npm start` command
+Tecnologias utilizadas:
+- Node.js
+- Express
+- TypeORM
+- PostgreSQL
+- TypeScript
+- Dotenv
+- Cors
+
+Configuração do ambiente:
+
+1. Clone o repositório
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
+
+2. Instale as dependências
+   npm install
+
+3. Configure as variáveis de ambiente
+   Crie um arquivo .env e adicione as seguintes configurações:
+
+   PORT=4000
+   DB_HOST=localhost
+   DB_PORT=5432
+   DB_USERNAME=seu_usuario
+   DB_PASSWORD=sua_senha
+   DB_NAME=seu_banco
+
+4. Execute as migrations
+   npm run typeorm migration:run -- -d ./src/utils/data-source.ts
+
+5. Inicie a aplicação
+   npm run dev
+
+Rotas da API:
+
+1. Criar uma receita
+   Método: POST
+   Rota: /recipes
+   Corpo da requisição:
+   {
+     "name": "Bolo de café",
+     "is_fitness": false,
+     "preparation_time": 10,
+     "ingredients": [
+       { "name": "4 ovos" },
+       { "name": "3 xícaras de trigo" }
+     ],
+     "steps": [
+       { "description": "Misture os ovos e o açúcar até esbranquiçar." }
+     ]
+   }
+
+2. Listar receitas
+   Método: GET
+   Rota: /recipes
+
+Como contribuir:
+
+1. Fork o repositório
+2. Crie uma branch (git checkout -b minha-feature)
+3. Commit suas mudanças (git commit -m "Minha nova feature")
+4. Push para a branch (git push origin minha-feature)
+5. Abra um Pull Request
